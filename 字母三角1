@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int line, n;
+    char c;
+    int m = 65;
+    scanf("%d", &n);
+    for (line = 1; line < n+1; line++) {
+
+        for (int i = 0; i < n - line; i++) {
+            printf(" ");
+        }
+        for (int j = 0; j < 2 * line -1; j++) {
+            printf("%c", m);
+           m++;
+            if(m>90){
+                m=65;
+            }
+        }
+
+        printf("\n");
+    }
+    int k=m-1;
+    for (int lin = n; lin > 0; lin--) {
+
+        for (int i = 0; i < n - lin; i++) {
+            printf(" ");
+        }
+        for (int j = 0; j < 2 * lin-1 ; j++) {
+            printf("%c", k);
+            k--;
+            if (k<65) {
+                k = 90;
+            }
+        }
+        printf("\n");
+    }
+}
