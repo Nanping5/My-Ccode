@@ -1,22 +1,22 @@
 #include <stdio.h>
 int main(){
-    int n;
-    scanf("%d",&n);
-    if(n<1){
-        return 0;
-    }
-    if(n>100){
-        return 0;
-    }
-    if(1<=n&n<=100){
-        if(n%2==0||n%3==0||n%5==0||n%7==0){
-            printf("0");
+    int M,N,x,y,sum=0,count=0;
+    scanf("%d %d",&M,&N);
+    for(x=M;x<=N;x++)
+    {
+        for(y=2;y<x;y++)
+        {
+            if (x % y == 0)
+            {
+                break;
+            }
         }
-        else{printf(" 1");}
-
-
+            if(x==y)
+            {
+                sum+=x;
+                count++;
+            }
+        }
+    printf("%d %d",count,sum);
     }
 
-
-
-}
