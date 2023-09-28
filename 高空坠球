@@ -1,0 +1,22 @@
+#include "stdio.h"
+
+int main() {
+    long long high, n;
+    scanf("%lld %lld", &high, &n);
+    double dhigh = high;
+    double total_high = dhigh;
+
+    for (int i = 1; i < n; i++) {
+
+        total_high = total_high + dhigh;
+        dhigh=dhigh*0.5;
+    }
+
+
+    dhigh = dhigh * 0.5;
+
+
+    printf("%.1lf %.1lf\n", total_high, dhigh);
+
+    return 0;
+}
