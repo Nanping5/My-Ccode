@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int i=1,j=0,k=0;
+    int numa[100],numb[100];
+    int result[100];
+    while(i)
+    {
+        numa[j]=getchar();
+
+        if(numa[j]=='\n')
+        {
+            break;
+        }
+        j++;
+    }
+    while(i)
+    {
+        numb[k]=getchar();
+
+        if(numb[k]=='\n')
+        {
+            break;
+        }
+        k++;
+    }
+    int c = 0;
+    for (int l = j-1 ; l >= 0; l--)
+    {
+        int sum = numa[l] - '0' + numb[l] - '0' + c;
+        result[l] = sum % 10;
+        c = sum / 10;
+    }
+
+    if (c > 0) {
+        printf("%d",c);
+    }
+    for (int l = 0; l < j; l++)
+    {
+        printf("%d", result[l]);
+    }
+}
