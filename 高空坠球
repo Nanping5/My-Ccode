@@ -9,14 +9,16 @@ int main() {
     for (int i = 1; i < n; i++) {
 
         total_high = total_high + dhigh;
-        dhigh=dhigh*0.5;
+        dhigh = dhigh * 0.5;
     }
 
 
     dhigh = dhigh * 0.5;
 
-
-    printf("%.1lf %.1lf\n", total_high, dhigh);
-
+    if (n != 0){
+        printf("%.1lf %.1lf\n", total_high, dhigh);
+} else{
+        printf("0.0 0.0");
+    }
     return 0;
 }
