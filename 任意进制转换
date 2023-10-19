@@ -1,0 +1,28 @@
+#include <stdio.h>
+void change(int Number,int base){
+
+    int result_number=Number;
+    char current_number[10000];
+    int i=0;
+    int reminder;
+        while(result_number>0){
+            reminder=result_number%base;
+            if (reminder>=10){
+                current_number[i]='A'+reminder-10;
+            } else{
+                current_number[i]='0'+reminder;
+            }
+            result_number/=base;
+            i++;
+        }
+
+    for (int j = i-1; j >=0; j--) {
+        printf("%-2c",current_number[j]);
+    }
+}
+int main() {
+    int Number,base;
+    scanf("%d",&Number);
+    scanf("%d",&base);
+    change(Number,base);
+}
