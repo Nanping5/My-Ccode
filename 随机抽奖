@@ -1,0 +1,39 @@
+#include "stdio.h"
+#include <stdlib.h>
+#include <time.h>
+void give(long long num[1000]){
+    long long a=202310001;
+    for (int i = 0; i <1000 ; ++i) {
+        num[i]=a;
+        a++;
+    }
+}
+int choose(){
+    int max=1000,min=1;
+    int randnumber= (rand() % (max - min + 1)) + min;
+    return randnumber;
+}
+int main(){
+    srand(time(0));
+    long long  num[1000];
+    give(num);
+    int frist=choose();
+    int second[2];
+    int third[5];
+    for (int i = 0; i <2 ; ++i) {
+        second[i]=choose();
+    }
+    for (int j = 0; j <5 ; ++j) {
+        third[j]=choose();
+    }
+  printf("一等奖学号：%d\n",num[frist]);
+    printf("二等奖学号:");
+    for (int k = 0; k < 2; ++k) {
+        printf("%d ",num[second[k]]);
+    }
+    printf("\n");
+    printf("三等奖学号:");
+    for (int l = 0; l <5 ; ++l) {
+        printf("%d ",num[third[l]]);
+    }
+}
