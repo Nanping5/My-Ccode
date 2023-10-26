@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    int i = 0;
+    char ch;
+
+    while ((ch = getchar()) != '\n') {
+        input[i] = ch;
+        i++;
+    }
+    int count = 0;
+    for (int j = i - 1; j >= 0 && input[j] == '0'; --j) {
+        count++;
+    }
+int c=1;
+    for (int k = 0; k < i-count; ++k) {
+        if ((input[k]>='0'&&input[k]<='9')||input[k]=='.') {
+            if (input[k] == '0' &&c==1&& input[k + 1] != '.') {
+                continue;
+            }
+            printf("%c ", input[k]);
+            if (input[k]!='0'||input[k]=='.'){
+                c=0;
+            }
+        } else{
+            printf("error");
+            break;
+        }
+    }
+
+    return 0;
+}
